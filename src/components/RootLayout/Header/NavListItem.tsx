@@ -3,11 +3,31 @@ import Link from "next/link";
 import { useState } from "react";
 import { TListItem } from "./utils";
 
+/**
+ * Props interface for the NavListItem component.
+ * To Determined whether item should have active class
+ * or not
+ * @type {Object} Props
+ * @property {TListItem} item - The navigation list item.
+ * @property {boolean} active - Whether the item is active or not.
+ */
 interface Props {
 	item: TListItem;
 	active: boolean;
 }
 
+/**
+ * @definition
+ * Custom hook to generate tailwind classnames
+ * With ability to change its classnames based on hover state
+ * It also includes transition for smooth UI
+ * @function useStyles
+ * @param {boolean} hover - The hover state.
+ * @returns {Object} classesData - An object containing class names for different elements.
+ * @returns {string} classesData.linkStyle - Class names for the link element.
+ * @returns {string} classesData.linkStyleActive - Class names for the active link element.
+ * @returns {string} classesData.lineStyle - Class names for the underline element.
+ */
 const useStyles = (hover: boolean) => {
 	const baseClasses = {
 		link: "relative flex gap-1 items-center transition-all ease-in-out duration-300",
