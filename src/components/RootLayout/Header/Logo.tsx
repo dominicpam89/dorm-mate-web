@@ -8,7 +8,6 @@ interface Props {
 
 const useStyles = (hover: boolean) => {
 	const transitionClass = "transition-all ease-in-out duration-300";
-	const logoImageClass = "h-8";
 
 	const classesData = {
 		logoTextPhi: `${
@@ -26,8 +25,9 @@ export default function NavLogo({ width = "w-1/4" }: Props) {
 	const [hover, setHover] = useState(false);
 	const { logoTextFinance, logoTextPhi } = useStyles(hover);
 	return (
-		<div className={`${width}`}>
+		<div aria-label="logo-container" className={`${width}`}>
 			<Link
+				aria-label="logo-link"
 				href="/"
 				className="flex items-center space-x-2"
 				onMouseEnter={() => setHover(true)}
@@ -37,10 +37,10 @@ export default function NavLogo({ width = "w-1/4" }: Props) {
 					aria-label="logo-text"
 					className="self-center text-lg font-semibold whitespace-nowrap"
 				>
-					<span aria-label="logo-text-phi" className={logoTextPhi}>
+					<span aria-label="logo-text-dorm" className={logoTextPhi}>
 						Dorm
 					</span>
-					<span aria-label="logo-text-finance" className={logoTextFinance}>
+					<span aria-label="logo-text-mate" className={logoTextFinance}>
 						Mate
 					</span>
 				</span>
