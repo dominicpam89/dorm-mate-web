@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 interface Props {
@@ -16,7 +17,6 @@ const useStyles = (hover: boolean) => {
 		logoTextFinance: `${
 			hover ? "text-primary-main-color" : "text-secondary-dark-color"
 		} ${transitionClass}`,
-		logoImage: `${logoImageClass} ${hover ? "animate-cool-spin" : ""}`,
 	};
 
 	return classesData;
@@ -24,11 +24,11 @@ const useStyles = (hover: boolean) => {
 
 export default function NavLogo({ width = "w-1/4" }: Props) {
 	const [hover, setHover] = useState(false);
-	const { logoTextFinance, logoTextPhi, logoImage } = useStyles(hover);
+	const { logoTextFinance, logoTextPhi } = useStyles(hover);
 	return (
 		<div className={`${width}`}>
-			<a
-				href="https://dormate.co.id"
+			<Link
+				href="/"
 				className="flex items-center space-x-2"
 				onMouseEnter={() => setHover(true)}
 				onMouseLeave={() => setHover(false)}
@@ -44,7 +44,7 @@ export default function NavLogo({ width = "w-1/4" }: Props) {
 						Mate
 					</span>
 				</span>
-			</a>
+			</Link>
 		</div>
 	);
 }

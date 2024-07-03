@@ -1,5 +1,5 @@
 export const metadata = {
-	title: '404',
+	title: "404",
 };
 
 export default function NotFoundHomepage() {
