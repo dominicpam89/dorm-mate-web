@@ -15,7 +15,7 @@ interface PropsLinkComp {
 const useStyles = (hover: boolean) => {
 	const baseClasses = {
 		link: "relative flex gap-1 items-center transition-all ease-in-out duration-300",
-		line: "transition-all ease-in duration-300 absolute top-[80%] left-1/2 -translate-x-1/4 rounded-full bg-primary-main-color",
+		line: "transition-all ease-in duration-300 absolute top-[90%] left-1/2 -translate-x-1/4 rounded-full bg-primary-main-color",
 	};
 
 	return {
@@ -24,19 +24,17 @@ const useStyles = (hover: boolean) => {
 		}`,
 		linkStyleActive: `${baseClasses.link} text-primary-main-color transform scale-[110%]`,
 		lineStyle: `${baseClasses.line} ${hover ? "w-1/2 h-[2px]" : "w-0 h-0"}`,
-		lineStyleActive: `${baseClasses.line}`,
 	};
 };
 
 const LinkComp = ({ item, active }: PropsLinkComp) => {
 	const [hover, setHover] = useState(false);
-	const { linkStyle, linkStyleActive, lineStyle, lineStyleActive } =
-		useStyles(hover);
+	const { linkStyle, linkStyleActive, lineStyle } = useStyles(hover);
 	return (
 		<Link
 			aria-label="nav-item"
 			href={item.href}
-			className={active ? linkStyleActive : linkStyle}
+			className={!active ? linkStyle : linkStyleActive}
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
@@ -46,10 +44,7 @@ const LinkComp = ({ item, active }: PropsLinkComp) => {
 			<span aria-label="text" className="text-[0.9rem]">
 				{item.text}
 			</span>
-			<div
-				aria-label="underline"
-				className={active ? lineStyleActive : lineStyle}
-			></div>
+			<div aria-label="underline" className={lineStyle}></div>
 		</Link>
 	);
 };
