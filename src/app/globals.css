@@ -2,60 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    html{
+@layer base {
+    html {
         /* Primary Color */
-        --color-primary-main: 246,169,101;
-        --color-primary-dark: 123,85,51;
-        --color-primary-light: 251,212,178;
+        --color-primary-main: 246, 169, 101;
+        --color-primary-dark: 123, 85, 51;
+        --color-primary-light: 251, 212, 178;
 
-        --color-primary-main-contrast: 14,13,13;
-        --color-primary-dark-contrast: 255,255,255;
-        --color-primary-light-contrast: 32,30,30;
+        --color-primary-main-contrast: 14, 13, 13;
+        --color-primary-dark-contrast: 255, 255, 255;
+        --color-primary-light-contrast: 32, 30, 30;
 
         /* Secondary Color */
-        --color-secondary-main: 16,69,8;
-        --color-secondary-dark: 8,35,4;
-        --color-secondary-light: 136,162,132;
+        --color-secondary-main: 16, 69, 8;
+        --color-secondary-dark: 8, 35, 4;
+        --color-secondary-light: 136, 162, 132;
 
-        --color-secondary-main-contrast: 233,225,225;
-        --color-secondary-dark-contrast: 233,225,225;
-        --color-secondary-light-contrast: 15,15,15;
+        --color-secondary-main-contrast: 233, 225, 225;
+        --color-secondary-dark-contrast: 233, 225, 225;
+        --color-secondary-light-contrast: 15, 15, 15;
 
         /* Success Color */
-        --color-success-main: 132,214,50;
-        --color-success-dark: 66,107,25;
-        --color-success-light: 194,235,153;
+        --color-success-main: 132, 214, 50;
+        --color-success-dark: 66, 107, 25;
+        --color-success-light: 194, 235, 153;
 
-        --color-success-main-contrast: 19,18,18;
-        --color-success-dark-contrast: 245,239,239;
-        --color-success-light-contrast: 22,21,21;
+        --color-success-main-contrast: 19, 18, 18;
+        --color-success-dark-contrast: 245, 239, 239;
+        --color-success-light-contrast: 22, 21, 21;
 
         /* Warning Color */
-        --color-warning-main: 225,161,79;
-        --color-warning-dark: 113,81,40;
-        --color-warning-light: 240,208,167;
+        --color-warning-main: 225, 161, 79;
+        --color-warning-dark: 113, 81, 40;
+        --color-warning-light: 240, 208, 167;
 
-        --color-warning-main-contrast: 12,11,11;
-        --color-warning-dark-contrast: 245,242,242;
-        --color-warning-light-contrast: 29,27,27;
+        --color-warning-main-contrast: 12, 11, 11;
+        --color-warning-dark-contrast: 245, 242, 242;
+        --color-warning-light-contrast: 29, 27, 27;
 
         /* Error Color */
-        --color-error-main: 238,64,59;
-        --color-error-dark: 119,32,30;
-        --color-error-light: 247,160,157;
+        --color-error-main: 238, 64, 59;
+        --color-error-dark: 119, 32, 30;
+        --color-error-light: 247, 160, 157;
 
-        --color-error-main-contrast: 255,255,255;
-        --color-error-dark-contrast: 255,255,255;
-        --color-error-light-contrast: 22,21,21;
+        --color-error-main-contrast: 255, 255, 255;
+        --color-error-dark-contrast: 255, 255, 255;
+        --color-error-light-contrast: 22, 21, 21;
 
         /* Info Color */
-        --color-info-main: 46,38,240;
-        --color-info-dark: 23,19,120;
-        --color-info-light: 151,147,248;
+        --color-info-main: 46, 38, 240;
+        --color-info-dark: 23, 19, 120;
+        --color-info-light: 151, 147, 248;
 
-        --color-info-main-contrast: 245,241,241;
-        --color-info-dark-contrast: 245,241,241;
-        --color-info-light-contrast: 17,16,16;
+        --color-info-main-contrast: 245, 241, 241;
+        --color-info-dark-contrast: 245, 241, 241;
+        --color-info-light-contrast: 17, 16, 16;
     }
 }

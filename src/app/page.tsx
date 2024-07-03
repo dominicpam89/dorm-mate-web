@@ -1,7 +1,11 @@
-export default function HomePage() {
+import HomeHeader from "@/components/Homepage/Header";
+import Section1 from "@/components/Homepage/Section-1";
+
+export default function Home() {
 	return (
 		<>
-			<h1>HomePage</h1>
+			<HomeHeader />
+			<Section1 />
 		</>
 	);
 }
