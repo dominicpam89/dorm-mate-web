@@ -1,4 +1,5 @@
-import { dormitories } from "@/data/mock/dormitories";
+import { TDormitory, dormitories } from "@/data/mock/dormitories";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -6,6 +7,13 @@ interface Props {
 	params: {
 		dormId: string;
 	};
+}
+
+export function generateMetadata({ params: { dormId } }: Props) {
+	const dorm = dormitories.find((dorm) => dorm.id === parseInt(dormId));
+	return {
+		title: `${dorm!.name}`,
+	} as Metadata;
 }
 
 export default function DormPage({ params: { dormId } }: Props) {

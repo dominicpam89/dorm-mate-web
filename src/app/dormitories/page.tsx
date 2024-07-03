@@ -1,5 +1,15 @@
 import { dormitories } from "@/data/mock/dormitories";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export function generateMetadata() {
+	return {
+		title: {
+			template: "DormMate Selection | %S",
+			default: "DormMate Selection",
+		},
+	} as Metadata;
+}
 
 export default function DormitoriesPage() {
 	return (
