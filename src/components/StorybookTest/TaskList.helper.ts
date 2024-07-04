@@ -46,45 +46,43 @@ const waitFor = (time: number = 1000) =>
 		setTimeout(() => resolve(true), time);
 	});
 
-const mockArchiveTask = async (id: string) => {
-	await waitFor(500);
-	const task = mockTasks.find((task) => task.id === id);
-	const newTask = { ...task, state: "TASK_ARCHIVED" } as TypeTask;
-	const newTasks = [...mockTasks.filter((task) => task.id === id), newTask];
-	return newTasks;
-};
-
-const mockPinTask = async (id: string) => {
-	await waitFor(500);
-	const task = mockTasks.find((task) => task.id === id);
-	const newTask = { ...task, state: "TASK_PINNED" } as TypeTask;
-	const newTasks = [...mockTasks.filter((task) => task.id === id), newTask];
-	return newTasks;
-};
-
-const mockFetchTasks = async (time: number) => {
+export const useTasksOperation = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [tasks, setTasks] = useState<Array<TypeTask>>([]);
-	await waitFor(time);
-	setIsLoading(false);
-	setTasks(mockTasks);
-	return {
-		isLoading,
-		tasks,
-	};
-};
 
-export const useTasksOperation = async () => {
-	let isLoading: boolean = true;
-	let tasks: TypeTask[] = [];
-	mockFetchTasks(1200).then((data) => {
-		isLoading = data.isLoading;
-		tasks = data.tasks;
-	});
+	useEffect(() => {
+		waitFor(1200).then(() => {
+			setIsLoading(false);
+			setTasks(mockTasks);
+		});
+	}, []);
+
+	const onArchiveTask = (id: string) => {
+		setIsLoading(true);
+		waitFor(500).then(() => {
+			const task = tasks.find((task) => task.id === id);
+			const newTask = { ...task, state: "TASK_ARCHIVED" } as TypeTask;
+			const newTasks = [...tasks.filter((task) => task.id !== id), newTask];
+			setTasks(newTasks);
+			setIsLoading(false);
+		});
+	};
+
+	const onPinTask = (id: string) => {
+		setIsLoading(true);
+		waitFor(500).then(() => {
+			const task = tasks.find((task) => task.id === id);
+			const newTask = { ...task, state: "TASK_PINNED" } as TypeTask;
+			const newTasks = [...tasks.filter((task) => task.id !== id), newTask];
+			setTasks(newTasks);
+			setIsLoading(false);
+		});
+	};
+
 	return {
 		isLoading,
 		tasks,
-		onArchiveTask: mockArchiveTask,
-		onPinTask: mockPinTask,
+		onArchiveTask,
+		onPinTask,
 	};
 };

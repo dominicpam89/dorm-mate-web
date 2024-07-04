@@ -1,12 +1,8 @@
 import TaskItem from "./TaskItem";
-import { TaskListProps } from "./TaskList.helper";
+import { useTasksOperation } from "./TaskList.helper";
 
-export default function TaskList({
-	isLoading,
-	tasks,
-	onArchiveTask,
-	onPinTask,
-}: TaskListProps) {
+export default function TaskList() {
+	const { isLoading, onArchiveTask, onPinTask, tasks } = useTasksOperation();
 	if (isLoading)
 		return (
 			<div className="w-full flex justify-center items-center py-4">
@@ -33,8 +29,8 @@ export default function TaskList({
 					<TaskItem
 						key={task.id}
 						task={task}
-						onArchivedTask={onArchiveTask}
-						onPinTask={onPinTask}
+						onArchivedTask={() => onArchiveTask(task.id)}
+						onPinTask={() => onPinTask(task.id)}
 					/>
 				);
 			})}
