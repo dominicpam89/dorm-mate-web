@@ -1,24 +1,17 @@
-type TFloatingType = "filled" | "outlined" | "standard";
+import FloatingFilled from "./InputField/FloatingFilled";
+import FloatingOutline from "./InputField/FloatingOutline";
+import { IInputFieldProps } from "./InputField.type";
 
-interface Props {
-	label: string;
-	id: string;
-	name: string;
-	placeholder: string;
-	floatingType: TFloatingType;
-}
-
-export default function InputField({ label, id, name, placeholder }: Props) {
-	return (
-		<div aria-label="input-group" className="w-full flex gap-2 items-center">
-			<label htmlFor={id}>{label}</label>
-			<input
-				name={name}
-				id={id}
-				type="text"
-				placeholder={placeholder}
-				className="border"
-			/>
-		</div>
-	);
+export default function InputField({
+	inputFieldType,
+	componentProps,
+}: IInputFieldProps) {
+	switch (inputFieldType) {
+		case "filled":
+			return <FloatingFilled {...componentProps} />;
+		case "outlined":
+			return <FloatingOutline {...componentProps} />;
+		default:
+			throw new Error("no component selected");
+	}
 }

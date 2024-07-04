@@ -1,7 +1,10 @@
 "use client";
-import { Props } from "./prop";
+import { IInputFieldComponentProps } from "./../InputField.type";
 
-export default function FloatingOutline({ id, label }: Props) {
+export default function FloatingOutline({
+	id,
+	label,
+}: IInputFieldComponentProps) {
 	return (
 		<div className="relative">
 			<input
