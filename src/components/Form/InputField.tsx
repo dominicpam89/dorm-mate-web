@@ -1,8 +1,11 @@
+type TFloatingType = "filled" | "outlined" | "standard";
+
 interface Props {
 	label: string;
 	id: string;
 	name: string;
 	placeholder: string;
+	floatingType: TFloatingType;
 }
 
 export default function InputField({ label, id, name, placeholder }: Props) {
