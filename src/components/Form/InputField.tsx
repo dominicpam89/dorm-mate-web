@@ -1,20 +1,27 @@
-import FloatingFilled from "./InputField/FloatingFilled";
-import FloatingOutline from "./InputField/FloatingOutline";
-import { IInputFieldProps } from "./InputField.type";
-import FloatingStandard from "./InputField/FloatingStandard";
+import { IInputFieldProps, useStyle } from "./InputField.helper";
 
 export default function InputField({
+	id,
+	label,
+	type,
+	disabled,
 	inputFieldType,
-	componentProps,
 }: IInputFieldProps) {
-	switch (inputFieldType) {
-		case "filled":
-			return <FloatingFilled {...componentProps} />;
-		case "outlined":
-			return <FloatingOutline {...componentProps} />;
-		case "standard":
-			return <FloatingStandard {...componentProps} />;
-		default:
-			throw new Error("no component selected");
-	}
+	const style = useStyle();
+	const inputStyle = style.input[inputFieldType];
+	const labelStyle = style.label[inputFieldType];
+	return (
+		<div className="relative">
+			<input
+				type={type}
+				id={id}
+				className={inputStyle}
+				placeholder=" "
+				disabled={disabled}
+			/>
+			<label htmlFor={id} className={labelStyle}>
+				{label}
+			</label>
+		</div>
+	);
 }

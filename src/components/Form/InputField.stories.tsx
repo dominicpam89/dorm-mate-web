@@ -1,11 +1,6 @@
 import InputField from "./InputField";
 import { StoryObj } from "@storybook/react";
-import {} from "@storybook/test";
-import {
-	IInputFieldProps,
-	IInputFieldComponentProps,
-	TInputFieldFloatingType,
-} from "./InputField.type";
+import { IInputFieldProps, TInputFieldFloatingType } from "./InputField.helper";
 
 export default {
 	component: InputField,
@@ -13,41 +8,40 @@ export default {
 	tags: ["autodocs"],
 	args: {
 		disabled: false,
+		type: "text",
 	},
 	argTypes: {
 		disabled: { control: "boolean" },
+		type: { control: "object" },
 	},
 } as StoryObj;
 
-export const FloatingFilled = {
+export const InputFieldFilled = {
 	args: {
+		id: "filled-input",
+		label: "Filled Input",
+		type: "text",
+		disabled: false,
 		inputFieldType: "filled" as TInputFieldFloatingType,
-		componentProps: {
-			id: "test-floating-filled",
-			label: "Floating Filled",
-			disabled: false,
-		} as IInputFieldComponentProps,
 	} as IInputFieldProps,
 };
 
-export const FloatingOutline = {
+export const InputFieldOutlined = {
 	args: {
+		id: "outlined-input",
+		label: "Outlined Input",
+		type: "text",
+		disabled: false,
 		inputFieldType: "outlined" as TInputFieldFloatingType,
-		componentProps: {
-			id: "test-outlined-filled",
-			label: "Outlined Filled",
-			disabled: false,
-		} as IInputFieldComponentProps,
 	} as IInputFieldProps,
 };
 
-export const FloatingStandard = {
+export const InputFieldStandard = {
 	args: {
+		id: "standard-input",
+		label: "Standard Input",
+		type: "text",
+		disabled: false,
 		inputFieldType: "standard" as TInputFieldFloatingType,
-		componentProps: {
-			id: "test-standard-filled",
-			label: "Standard Filled",
-			disabled: false,
-		} as IInputFieldComponentProps,
 	} as IInputFieldProps,
 };
