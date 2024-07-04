@@ -3,5 +3,6 @@ import { StoryObj } from "@storybook/react";
 
 export default {
 	component: FloatingOutline,
-	storyName: "InputField - Floating Outline",
+	title: "InputField - Floating Outline",
+	tags: ["autodocs"],
 } as StoryObj;
