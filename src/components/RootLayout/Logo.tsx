@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { IProps } from "./DesktopHeader/helper";
 
 /**
  * @definition
@@ -33,11 +32,11 @@ const useStyles = (hover: boolean) => {
  * @param {IProps} props - The props object contains width control filled with default value.
  * @returns {JSX.Element} The rendered NavLogo component.
  */
-export default function NavLogo({ width = "w-1/4" }: IProps) {
+export default function NavLogo() {
 	const [hover, setHover] = useState(false);
 	const { logoMate, logoDorm } = useStyles(hover);
 	return (
-		<div aria-label="logo-container" className={`${width}`}>
+		<div aria-label="logo-container" className="w-1/4">
 			<Link
 				aria-label="logo-link"
 				href="/"
