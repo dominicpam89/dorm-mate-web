@@ -2,7 +2,7 @@ import { screen, render, within } from "@testing-library/react";
 import { test, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
 import NavListItem from "./NavListItem";
-import { TListItem } from "./utils";
+import { TListItem } from "./helper";
 
 const fakeListItem: TListItem = {
 	href: "/about",

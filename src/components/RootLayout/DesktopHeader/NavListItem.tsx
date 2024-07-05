@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { TListItem } from "./utils";
+import { TListItem } from "./helper";
 
 /**
  * Props interface for the NavListItem component.
@@ -43,7 +43,7 @@ const useStyles = (hover: boolean) => {
 	};
 };
 
-const NavListItem = ({ item, active }: Props) => {
+const NavListItemDesktop = ({ item, active }: Props) => {
 	const [hover, setHover] = useState(false);
 	const { linkStyle, linkStyleActive, lineStyle } = useStyles(hover);
 	return (
@@ -65,4 +65,4 @@ const NavListItem = ({ item, active }: Props) => {
 	);
 };
 
-export default NavListItem;
+export default NavListItemDesktop;

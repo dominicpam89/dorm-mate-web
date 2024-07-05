@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { IProps } from "./utils";
+import { IProps } from "./DesktopHeader/helper";
 
 /**
  * @definition

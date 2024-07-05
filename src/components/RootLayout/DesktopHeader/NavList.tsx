@@ -1,8 +1,8 @@
 "use client";
 import NavListItem from "./NavListItem";
-import { navlist, TListItem } from "./utils";
+import { navlist, TListItem } from "./helper";
 import { usePathname } from "next/navigation";
-import { IProps } from "./utils";
+import { IProps } from "./helper";
 
 /**
  * @description
@@ -26,11 +26,11 @@ const isActive = (item: TListItem, pathname: string) => {
 
 /**
  * NavListItem component that renders a navigation list item with hover effects.
- * @function NavListItem
+ * @function NavListDesktop
  * @param {Props} props - The props object which only contains width control
  * @returns {JSX.Element} The rendered NavListItem component.
  */
-export default function NavList({ width = "w-2/4" }: IProps) {
+export default function NavListDesktop({ width = "w-2/4" }: IProps) {
 	const pathname = usePathname();
 	return (
 		<ul aria-label="list" className={`${width} flex gap-8 justify-center`}>
